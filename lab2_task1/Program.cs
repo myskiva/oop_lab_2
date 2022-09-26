@@ -1,5 +1,5 @@
-using Microsoft.VisualBasic;
-using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Net;
 
 namespace task1
 {
@@ -14,9 +14,9 @@ namespace task1
 
         public int Index
         {
-            get 
-            { 
-                return index; 
+            get
+            {
+                return index;
             }
             set
             {
@@ -78,25 +78,17 @@ namespace task1
                 apartment = value;
             }
         }
-
-        public void Print()
+        public static void Main()
         {
-            Console.WriteLine($"Index: {index} Country: {country} City: {city} Street: {street} House: {house} Apartment: {apartment}");
+            Adress my = new Adress();
+            my.index = 55555;
+            my.country = "Ukraine";
+            my.city = "Kyiv";
+            my.street = "Khreshchatyk";
+            my.house = 25;
+            my.apartment = 50;
+            Console.WriteLine($"Index: {my.index}; Country: {my.country}; City: {my.city}; Street: {my.street}; House: {my.house}; Apartment: {my.apartment}");
         }
     }
-
-    my Adress = new Adress();
-    int indexAdress = my.index;
-    string countryAdress = my.country;
-    string cityAdress = my.city;
-    string streetAdress = my.street;
-    int houseAdress = my.house;
-    int apartmentAdress = my.apartment;
-    Console.WriteLine($"Index: {indexAdress} Country: {countryAdress} City: {cityAdress} Street: {streetAdress} House: {houseAdress} Apartment: {apartmentAdress}");
-my.index = 55555;
-my.country = "Ukraine";
-my.city = "Kyiv";
-my.street = "Khreshchatyk";
-my.house = 25;
-my.apartment = 50;
 }
+
