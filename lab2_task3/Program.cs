@@ -19,45 +19,6 @@ namespace task3
             this.firstName = firstName;
             this.lastName = lastName;
         }
-
-        public double Wage()
-        {
-            if (post == 1)
-            {
-                salary = 700;
-            }
-            else if (post == 2)
-            {
-                salary = 1000;
-            }
-            else if (post == 3)
-            {
-                salary = 1500;
-            }
-
-            if (experience > 0 || experience <= 2)
-            {
-                exp = 1;
-            }
-            else if (experience > 2 || experience <= 5)
-            {
-                exp = 2;
-            }
-            else if (experience > 5)
-            {
-                exp = 3;
-            }
-
-            wage = salary * exp;
-            return wage;
-        }
-
-        public double Tax()
-        {
-            tax = wage / 100 * 22;
-            return tax;
-        }
-
         public static void Main()
         {
             Employee tom = new Employee("Tom", "Johnson");
@@ -67,11 +28,35 @@ namespace task3
 
             Console.WriteLine($"Enter your post (Choose number: Junior - 1, Middle - 2, Senior - 3): ");
             tom.post = int.Parse(Console.ReadLine());
+            if (tom.post == 1)
+            {
+                tom.salary = 700;
+            }
+            else if (tom.post == 2)
+            {
+                tom.salary = 1000;
+            }
+            else if (tom.post == 3)
+            {
+                tom.salary = 1500;
+            }
 
             Console.WriteLine($"Enter your experience: ");
             tom.experience = int.Parse(Console.ReadLine());
+            if (tom.experience > 0 && tom.experience <= 2)
+            {
+                tom.exp = 1;
+            }
+            else if (tom.experience > 2 && tom.experience <= 5)
+            {
+                tom.exp = 2;
+            }
+            else if (tom.experience > 5)
+            {
+                tom.exp = 3;
+            }
 
-            Console.WriteLine($"Your wage is: {tom.wage}; Tax collection is: {tom.tax}");
+            Console.WriteLine("Your wage is: " + tom.salary * tom.exp + "; Tax collection: " + (tom.salary * tom.exp) / 100 * 22);
         }
     }
 }
