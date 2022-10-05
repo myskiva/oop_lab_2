@@ -3,6 +3,19 @@ using System.Net;
 
 namespace task4
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            User one = new User();
+            one.Login = "arsen_myskiv";
+            one.Name = "Arsen";
+            one.Surname = "Myskiv";
+            one.Age = 18;
+
+            one.Print();
+        }
+    }
     class User
     {
         private string login;
@@ -60,14 +73,9 @@ namespace task4
             fillingDate = DateTime.Now;
         }
 
-        public static void Main()
+        public void Print()
         {
-            User one = new User();
-            one.login = "arsen_myskiv";
-            one.name = "Arsen";
-            one.surname = "Myskiv";
-            one.Age = 18;
-            Console.WriteLine($"Login: {one.login}; Name: {one.name}; Surname: {one.surname}; Age: {one.age}; date of filling out the questionnaire: {fillingDate}");
+            Console.WriteLine($"Login: {login}; Name: {name}; Surname: {surname}; Age: {age}; date of filling out the questionnaire: {fillingDate}");
         }
     }
 }

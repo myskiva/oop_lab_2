@@ -3,6 +3,20 @@ using System.Net;
 
 namespace task1
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Adress my = new Adress();
+            my.Index = 55555;
+            my.Country = "Ukraine";
+            my.City = "Kyiv";
+            my.Street = "Khreshchatyk";
+            my.House = 25;
+            my.Apartment = 50;
+            my.Print();
+        }
+    }
     class Adress
     {
         private int index;
@@ -78,16 +92,9 @@ namespace task1
                 apartment = value;
             }
         }
-        public static void Main()
+        public void Print()
         {
-            Adress my = new Adress();
-            my.index = 55555;
-            my.country = "Ukraine";
-            my.city = "Kyiv";
-            my.street = "Khreshchatyk";
-            my.house = 25;
-            my.apartment = 50;
-            Console.WriteLine($"Index: {my.index}; Country: {my.country}; City: {my.city}; Street: {my.street}; House: {my.house}; Apartment: {my.apartment}");
+            Console.WriteLine($"Index: {index}; Country: {country}; City: {city}; Street: {street}; House: {house}; Apartment: {apartment}");
         }
     }
 }
